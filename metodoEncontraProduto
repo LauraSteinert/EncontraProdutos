@@ -1,0 +1,20 @@
+/* Escreva um método que verifique se um determinado produto (objeto da classe Produto, do exercício anterior), se encontra em um arranjo de produtos, ordenado de forma crescente.
+A busca deve ser feita a partir do código do produto. O método recebe em seus parâmetros tanto o produto a ser buscado quanto o arranjo onde a busca será feita, 
+retornando a posição no arranjo em que está esse produto (ou -1 caso não o encontre). */
+
+static int busca(Produto[] arr, Produto p) { 
+
+	int fim = arr.length-1;
+	int ini = 0;
+	while (ini <= fim){
+		int meio = (fim+ini)/2;
+		if(arr[meio].codProduto<p.codProduto)
+			ini = meio-1;
+		else
+			if(arr[meio].codProduto>p.codProduto)
+				ini = meio-1;
+		else 	return(meio);
+	}
+return(-1);
+}
+
